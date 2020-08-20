@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="68" viewBox="0 0 68 68">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 256 256">
+      <image width="256" height="256" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAElBMVEUAAAD////MzMz19fWUlJQfHx/4V5wDAAAA5ElEQVR42u3bwQmDMBiG4dg6gKUO0It3Rby30Aks3X8VF8h/UDGCPO/5CzzHEEh6nFwCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2HCm/QZ9CgGaFFQBAAAAAAAAAAAAAAAAAAAAAAAUAjzHoMFDJQAAAAAAAAAAwAUB3T/TL1pPufW8C/DKXf/v0brPrW8AAAAAAAAAAAAAAAAAAAAAABcE1NEHh3chwLoAAAAAAAAAAAAAAAAAAAAAAAD2AY4PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4HTAAixNWYGlE4hTAAAAAElFTkSuQmCC"/>
+    </pattern>
+    <filter id="unsplash" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#unsplash)">
+    <g id="unsplash-2" data-name="unsplash" transform="translate(9 6)" stroke="#ccc" stroke-width="0.5" fill="url(#pattern)">
+      <rect width="50" height="50" rx="5" stroke="none"/>
+      <rect x="0.25" y="0.25" width="49.5" height="49.5" rx="4.75" fill="none"/>
+    </g>
+  </g>
+</svg>
