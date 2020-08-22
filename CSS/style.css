@@ -2,8 +2,10 @@
 
 }
 
-h1,h2, h3, h4 {font-family: 'Rock Salt', cursive;}
-p {
+h1,h2, h3, h4, .heading, .headingmain {
+    font-family: 'Rock Salt', cursive;
+}
+p, .subhead, .subheadmain {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
 }
@@ -11,20 +13,51 @@ p {
     display: flex;
     justify-content: center;
 }
-.nav-container {
+#navGrid {
+    display: grid;
+    position: fixed;
+    bottom: 0;
+    width: 800px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 100px;
-    width: 70%;
-    height: 100px;
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "homeLink CSLink UILink aboutLink processLink funLink"
+        ;
 }
-.nav-container img {
-    width: 100%;
-    height: auto;
+#homeLink {
+    grid-area: homeLink;
+    background-image: url(../images/home.png);  
+}
+#CSLink {
+    grid-area: CSLink;
+    background-image: url(../images/red.png);
+}
+#UILink {
+    grid-area: UILink;
+    background-image: url(../images/yellow.png);
+}
+#aboutLink {
+    grid-area: aboutLink;
+    background-image: url(../images/about.png);
+}
+#processLink {
+    grid-area: processLink;
+    background-image: url(../images/blue.png);
+}
+#funLink {
+    grid-area: funLink;
+    background-image: url(../images/purple.png);
+}
+.linkArea {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    position: relative;
 }
 .p1 {
     /* background paint splatter */
@@ -35,106 +68,191 @@ p {
     display: flex;
     justify-content: center;
 }
-.p1-container { 
-    /* hello sticker and intro with box width limits in center*/
+#p1Grid {
+    display: grid;
     width: 1100px;
-    height: auto;
+    height: 500px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "p1left p1right"
+        ;
+}
+#p1left {
+    grid-area: p1left;
+    background-image: url(../images/helloSticker.svg);
+}
+#p1right {
+    grid-area: p1right; 
+    place-self: center;
+    font-size: 26px;
+}
+.p1Area {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bgimg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    height: inherit;
 }
-.p1-container img, .p1-text, .p2-text1 {
-    width: 50%;
-    padding: 16px;
-}
-.p2 {
+#p2 {
     background-image: url(../images/brushred.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-.p2-container1, .p2-container2 { 
+#p2Grid {
+    display: grid;
     width: 1100px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    text-align: center;
-    text-decoration: none;
+    height: 700px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+        "non non nontext"
+        "gov rec trav"
+        ;
+    gap: 20px 20px;
 }
-.p2-container1 img{
-    width: 50%; 
-    padding: 16px;
+#non {
+    grid-area: non;
+    background-image: url(../images/caseStudy-nonprofit.png);
+    background-size: 70%;
 }
-.p2-container2 img{
-    width: 300px;
-    height: auto;
-    justify-content: center;
+#nontext {
+    grid-area: nontext;
+    justify-self: start;
+    align-self: center;
 }
-.p2-text {
-    display: none;
+#gov {
+    grid-area: gov;
+    background-image: url(../images/caseStudy-gov@2x.png)
 }
-.p3 {
+#rec {
+    grid-area: rec;
+    background-image: url(../images/caseStudy-recycle.png);
+}
+#trav {
+    grid-area: trav;
+    background-image: url(../images/caseStudy-travel@1.png);
+}
+.CSArea {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    align-content: end;
+}
+.heading, .subhead {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    height: 25px;
+}
+.subhead {
+    font-weight: bold;
+}
+.headingmain {
+    font-size: 30px;
+}
+.subheadmain {
+    font-size: 20px;
+}
+#p3 {
     background-image: url(../images/brushyellow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: absolute;
-    left: -10.28%;
-    right: -4.81%;
-    top: 115.38%;
-    bottom: -34.97%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.p3-container {
+#p3Grid {
+    display: grid;
     width: 1100px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 12% 44% 44%;
+    grid-template-areas: 
+        "p3title p3title p3title"
+        "ui001 ui002 ui003"
+        "ui004 ui005 ui006"
+        ;
+    gap: 16px 16px;
 }
-.p3 h2 {
-    padding-top: 30px;
-}
-.p3-images {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.p3-images img {
-    width: 22%;
-    padding: 16px;
-}
-.p4 {
-    background-image: url(../images/brushGreen.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.p4-container {
-    width: 1100px;
-    height: auto;
-    display: flex;
-}
-.p4item1, .p4item2 {
-    width: 50%;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 50px;
-}
-.p4item2 h2 {
+#p3title {
+    grid-area: p3title;
     text-align: center;
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+}
+#ui001 {
+    grid-area: ui001;
+    background-image: url(../images/UI001@1.png);
+}
+#ui002 {
+    grid-area: ui002;
+    background-image: url(../images/UI002@1.png);
+}
+#ui003 {
+    grid-area: ui003;
+    background-image: url(../images/UI003@1.png);
+}
+#ui004 {
+    grid-area: ui004;
+    background-image: url(../images/UI004.png);
+}
+#ui005 {
+    grid-area: ui005;
+    background-image: url(../images/UI004.png);
+}
+#ui006 {
+    grid-area: ui006;
+    background-image: url(../images/UI004.png);
+}
+.uiArea {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#p4 {
+    background-image: url(../images/brushGreen.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#p4Grid {
+    width: 1100px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 85%;
+    grid-template-areas: 
+        "p4title p4title"
+        "p4img p4text"
+        ;
+}
+#p4title {
+    grid-area: p4title;
+    text-align: center;
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+}
+#p4img {
+    grid-area: p4img;
+}
+#p4text {
+    grid-area: p4text;
+    display: grid;
+    font-family: 'Oswald', sans-serif;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+        "p4t"
+        "p4t2"
+        ;
+}
+#p4t2 {
+    justify-self: center;
 }
 button {
     font-family: 'Oswald', sans-serif;
@@ -144,76 +262,101 @@ button {
     padding-left: 15px;
     padding-right: 15px;
 }
-.p5 {
+#p5 {
     background-image: url(../images/brushBlue.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
 }
 #p5Grid {
     display: grid;
-    max-width: 1100px;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 1100px;
+    height: 900px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
     grid-template-areas: 
-        "title title" 
-        "img1 img2" 
-        "img1 img2"
-        "img1 img2"
-        "text1 text2"
-        "text1 text2"
-        "text3 text3"
-        "text4 text4"
+        "p5t p5t" 
+        "p5img1 p5img2" 
+        "p5text1 p5text2"
+        "p5text3 p5text3"
         ;
 }
-#title {    
-    grid-area: title;
+#p5t {
+    grid-area: p5t;
     text-align: center;
+    align-self: end;
 }
-#img1 {
-    grid-area: img1;
+#p5img1 {
+    grid-area: p5img1;
     background-image: url(../images/UX\ part\ 1.svg);
+    background-position: right;
 }
-#img2 {
-    grid-area: img2;
+#p5img2 {
+    grid-area: p5img2;
     background-image: url(../images/UX\ part\ 2.svg);
+    background-position: left;
+    
 }
-#text1 {
-    grid-area: text1;
-    text-align: center;
+#p5text1 {
+    grid-area: p5text1;
     padding: 16px;
-}
-#text2 {
-    grid-area: text2;
     text-align: center;
+}
+#p5text2 {
+    grid-area: p5text2;
     padding: 16px;
-}
-#text3 {
-    grid-area: text3;
     text-align: center;
 }
-#text4 {
-    grid-area: text4;
+#p5text3 {
+    grid-area: p5text3;
     text-align: center;
 }
-.imgArea {
-  background-position: bottom;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.p6 {
-    background-image: url(../images/brushPurple.png);
-    background-size: contain;
+.p5Area {
     background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-position: center;
+    background-size: contain;
+}
+#p6 {
+    background-image: url(../images/brushPurple.png);
+}
+#p6Grid {
+    display: grid;
+    width: 1100px;
+    height: 1300px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .5fr 2fr 2fr;
+    grid-template-areas: 
+        "p6t p6t"
+        "photo ami"
+        "read sport"
+        ;
+}
+#p6t {
+    grid-area: p6t;
     text-align: center;
 }
+#photo {
+    grid-area: photo;
+    text-align: center;
+}
+#ami {
+    grid-area: ami;
+    text-align: center;
+}
+#read {
+    grid-area: read;
+    text-align: center;
+}
+#sport {
+    grid-area: sport;
+    text-align: center;
+    overflow: hidden;
+}
+#p7 img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+
+
+
 footer {
     background-image: url(../images/splatter.svg);
     background-size: cover;
