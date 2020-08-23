@@ -279,14 +279,12 @@ button {
     cursor: pointer;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
   }
-  
   button{
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
-  
   button:after {
     content: '»';
     position: absolute;
@@ -299,7 +297,6 @@ button {
     padding-right: 24px;
     padding-left:8px;
   }
-  
   button:hover:after {
     opacity: 1;
     right: 10px;
@@ -396,9 +393,6 @@ button {
     width: 200px;
     height: 200px;
 }
-
-
-
 footer {
     background-image: url(../images/splatter.svg);
     background-size: cover;
