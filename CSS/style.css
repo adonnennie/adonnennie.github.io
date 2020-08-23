@@ -1,7 +1,9 @@
 @media(min-width:768px) {
 
 }
-
+html {
+    scroll-behavior: smooth;
+}
 h1,h2, h3, h4 {
     font-family: 'Rock Salt', cursive;
 }
@@ -22,12 +24,13 @@ a:link {
 .nav {
     display: flex;
     justify-content: center;
+    z-index: 10;
 }
 #navGrid {
     display: grid;
     position: fixed;
-    bottom: 0;
-    width: 800px;
+    bottom: 10px;
+    max-width: 800px;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 100px;
@@ -38,36 +41,27 @@ a:link {
         ;
 }
 #homeLink {
-    grid-area: homeLink;
-    background-image: url(../images/home.png);  
+    grid-area: homeLink; 
+    padding-bottom: 20px;
 }
 #CSLink {
     grid-area: CSLink;
-    background-image: url(../images/red.png);
 }
 #UILink {
     grid-area: UILink;
-    background-image: url(../images/yellow.png);
 }
 #aboutLink {
     grid-area: aboutLink;
-    background-image: url(../images/about.png);
 }
 #processLink {
     grid-area: processLink;
-    background-image: url(../images/blue.png);
 }
 #funLink {
     grid-area: funLink;
-    background-image: url(../images/purple.png);
 }
-.linkArea {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-    display: flex;
-    position: relative;
+.linkArea img {
+    object-fit: cover;
+    width: 90%;
 }
 .p1 {
     /* background paint splatter */
@@ -379,6 +373,7 @@ button {
 #p6t {
     grid-area: p6t;
     text-align: center;
+    align-self: end;
 }
 #photo {
     grid-area: photo;
