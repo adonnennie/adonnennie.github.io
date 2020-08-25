@@ -408,27 +408,28 @@ footer img {
     width: 46px;
     margin-top: 20px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 730px) {
     #navGrid {
         display: grid;
         position: fixed;
+        z-index: 10;
         bottom: 10px;
-        width: 450px;
-        height: 150px;
+        width: 600px;
+        height: 80px;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 100px;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 75px 75px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px;
         grid-template-areas: 
-            "homeLink CSLink UILink" 
-            "aboutLink processLink funLink"
+            "homeLink CSLink UILink aboutLink processLink funLink"
             ;      
             align-items: center;
     }
     .linkArea img {
-        width: 65%; 
+        width: 70%; 
         object-fit: contain;
-        margin-left: 35px;
+        margin-left: 25px;
+        margin-bottom: 10px;
     }
     #p1Grid {
         display: grid;
@@ -452,7 +453,7 @@ footer img {
         width: 555px;
         height: 1200px;
         grid-template-columns: 1fr;
-        grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
         grid-template-areas: 
             "nontext"
             "non"
@@ -516,6 +517,18 @@ footer img {
             ;
         padding-right: 20px;
     }
+    button {
+        border-radius: 10px;
+        background-color: #37aa59;
+        border: none;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        padding: 16px;
+        width: 150px;
+        box-shadow: 0 5px 10px -8px rgba(0, 0, 0,.7);
+        z-index: 0;
+      }
     #p5 {
         background-image: url(../images/brushBlue.png);
         background-position: top;
@@ -574,7 +587,7 @@ footer img {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        height: 300px;
+        height: 200px;
         display: block;
         justify-content: center;
         text-align: center;
