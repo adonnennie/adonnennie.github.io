@@ -1,6 +1,4 @@
-@media(min-width:768px) {
 
-}
 html {
     scroll-behavior: smooth;
 }
@@ -409,4 +407,377 @@ footer {
 footer img {
     width: 46px;
     margin-top: 20px;
+}
+@media only screen and (max-width: 600px) {
+    #navGrid {
+        display: grid;
+        position: fixed;
+        bottom: 10px;
+        width: 450px;
+        height: 150px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 100px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 75px 75px;
+        grid-template-areas: 
+            "homeLink CSLink UILink" 
+            "aboutLink processLink funLink"
+            ;      
+            align-items: center;
+    }
+    .linkArea img {
+        width: 65%; 
+        object-fit: contain;
+        margin-left: 35px;
+    }
+    #p1Grid {
+        display: grid;
+        width: 555px;
+        height: 600px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "p1left" 
+            "p1right"
+            ;
+    }
+    #p2 {
+        background-image: url(../images/brushred.png);
+        background-position: top;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+    #p2Grid {
+        display: grid;
+        width: 555px;
+        height: 1200px;
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "nontext"
+            "non"
+            "gov" 
+            "rec" 
+            "trav"
+            ;
+        row-gap: 20px;
+    }
+    #p3 {
+        background-image: url(../images/brushyellow.png);
+        background-position: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    #p3Grid {
+        display: grid;
+        width: 555px;
+        height: 700px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr;
+        grid-template-areas: 
+            "p3title p3title"
+            "ui001 ui002" 
+            "ui003 ui004" 
+            "ui005 ui006"
+            ;
+        gap: 16px 16px;
+    }
+    #p4 {
+        background-image: url(../images/brushGreen.png);
+        background-position: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    #p4Grid {
+        width: 500px;
+        height: 1000px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 2fr 2fr;
+        grid-template-areas: 
+            "p4title"
+            "p4img" 
+            "p4text"
+            ;
+    }
+    #p4text {
+        grid-area: p4text;
+        display: grid;
+        font-family: 'Oswald', sans-serif;
+        grid-template-columns: 1fr;
+        grid-template-rows: 90% 10%;
+        grid-template-areas: 
+            "p4t"
+            "p4t2"
+            ;
+        padding-right: 20px;
+    }
+    #p5 {
+        background-image: url(../images/brushBlue.png);
+        background-position: top;
+        margin-top: 50px;
+    }
+    #p5Grid {
+        display: grid;
+        width: 555px;
+        height: 1100px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 25% 15% 25% 15% 10%;
+        grid-template-areas: 
+            "p5t" 
+            "p5img1" 
+            "p5text1" 
+            "p5img2" 
+            "p5text2"
+            "p5text3"
+            ;
+    }
+    #p5img1 {
+        grid-area: p5img1;
+        background-image: url(../images/UX\ part\ 1.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    #p5img2 {
+        grid-area: p5img2;
+        background-image: url(../images/UX\ part\ 2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    #p6 {
+        background-image: url(../images/brushPurple.png);
+        background-position: top;
+        margin-top: 50px;
+    }
+    #p6Grid {
+        display: grid;
+        width: 600px;
+        height: 2500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-areas: 
+            "p6t"
+            "photo" 
+            "ami"
+            "read" 
+            "sport"
+            ;
+    }
+    footer {
+        background-image: url(../images/splatter.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 300px;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0..25);
+        -moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+    }
+}
+@media only screen and (max-width: 375px) {
+    #navGrid {
+        display: grid;
+        position: fixed;
+        bottom: 10px;
+        width: 360px;
+        height: 150px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 100px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 75px 75px;
+        grid-template-areas: 
+            "homeLink CSLink UILink" 
+            "aboutLink processLink funLink"
+            ;      
+            align-items: center;
+    }
+    .linkArea img {
+        width: 65%; 
+        object-fit: contain;
+        margin-left: 35px;
+    }
+    #p1Grid {
+        display: grid;
+        width: 360px;
+        height: 600px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "p1left" 
+            "p1right"
+            ;
+    }
+    #p1right {
+        grid-area: p1right; 
+        font-size: 22px;
+        text-align: center;
+    }
+    #p2 {
+        background-image: url(../images/brushred.png);
+        background-position: top;
+        margin-top: 25px;
+    }
+    #p2Grid {
+        display: grid;
+        width: 360px;
+        height: 1200px;
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "nontext"
+            "non"
+            "gov" 
+            "rec" 
+            "trav"
+            ;
+        row-gap: 16px;
+        padding-left: 16px;
+        scroll-padding-right: 16px;
+    }
+    #p3 {
+        background-image: url(../images/brushyellow.png);
+        background-position: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    #p3Grid {
+        display: grid;
+        width: 360px;
+        height: 1000px;
+        grid-template-columns: 1fr;
+        grid-template-rows: .25fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "p3title"
+            "ui001" 
+            "ui002" 
+            "ui003" 
+            "ui004" 
+            "ui005" 
+            "ui006"
+            ;
+        row-gap: 16px;
+    }
+    #p4 {
+        background-image: url(../images/brushGreen.png);
+        background-position: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    #p4Grid {
+        width: 360px;
+        height: 1000px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 20% 70%;
+        grid-template-areas: 
+            "p4title"
+            "p4img" 
+            "p4text"
+            ;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    #p4text {
+        grid-area: p4text;
+        display: grid;
+        width: 300px;
+        padding-left: 10px;
+        font-family: 'Oswald', sans-serif;
+        grid-template-columns: 1fr;
+        grid-template-rows: 90% 10%;
+        grid-template-areas: 
+            "p4t"
+            "p4t2"
+            ;
+    }
+    iframe {
+        width: 110%;
+        height: auto;
+        padding-top: 25px;
+    }
+    #p5 {
+        background-image: url(../images/brushBlue.png);
+        background-position: top;
+    }
+    #p5Grid {
+        display: grid;
+        width: 360px;
+        height: 1200px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5% 18% 18% 18% 18% 23%;
+        grid-template-areas: 
+            "p5t" 
+            "p5img1" 
+            "p5text1" 
+            "p5img2" 
+            "p5text2"
+            "p5text3"
+            ;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 50px;
+    }
+    #p5img1 {
+        grid-area: p5img1;
+        background-image: url(../images/UX\ part\ 1.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    #p5img2 {
+        grid-area: p5img2;
+        background-image: url(../images/UX\ part\ 2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    #p5text3 {
+        margin-top: 50px;
+    }
+    #p6 {
+        background-image: url(../images/brushPurple.png);
+        background-position: top;
+    }
+    #p6Grid {
+        display: grid;
+        width: 600px;
+        height: 4500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-areas: 
+            "p6t"
+            "photo" 
+            "ami"
+            "read" 
+            "sport"
+            ;
+    }
+    footer {
+        background-image: url(../images/splatter.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 300px;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0..25);
+        -moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+    }
 }
