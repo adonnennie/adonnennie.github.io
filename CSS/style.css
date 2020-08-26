@@ -37,6 +37,7 @@ a:link {
     grid-template-areas: 
         "homeLink CSLink UILink aboutLink processLink funLink"
         ;
+    z-index: 10;
 }
 #homeLink {
     grid-area: homeLink; 
@@ -106,6 +107,9 @@ a:link {
     background-image: url(../images/brushred.png);
     margin-top: 50px;
     margin-bottom: 50px;
+}
+#mobile {
+    display: none;
 }
 #p2Grid {
     display: grid;
@@ -276,6 +280,7 @@ button {
     transition: all 0.5s;
     cursor: pointer;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    z-index: 0;
   }
   button{
     cursor: pointer;
