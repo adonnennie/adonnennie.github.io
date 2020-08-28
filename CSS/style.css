@@ -30,7 +30,7 @@ a:link {
     bottom: 10px;
     max-width: 800px;
     height: 100px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 100px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -135,15 +135,18 @@ a:link {
 }
 #gov {
     grid-area: gov;
-    background-image: url(../images/caseStudy-gov@2x.png)
+    background-image: url(../images/caseStudy-gov@2x.png);
+    box-shadow: 0 0 5px 2px #7e7e7e52;
 }
 #rec {
     grid-area: rec;
     background-image: url(../images/caseStudy-recycle.png);
+    box-shadow: 0 0 5px 2px #7e7e7e52;
 }
 #trav {
     grid-area: trav;
     background-image: url(../images/caseStudy-travel@1.png);
+    box-shadow: 0 0 5px 2px #7e7e7e52;
 }
 .CSArea {
     background-repeat: no-repeat;
@@ -153,7 +156,7 @@ a:link {
     align-content: end;
 }
 .heading, .subhead {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 15px;
     height: 25px;
 }
@@ -172,23 +175,15 @@ font-family: 'Rock Salt', cursive;
 }
 #p3 {
     background-image: url(../images/brushyellow.png);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 100px;
+    text-align: center;
 }
-#p3Grid {
-    display: grid;
+#p3Container{
+    display: block;
     width: 1100px;
     height: 600px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 12% 44% 44%;
-    grid-template-areas: 
-        "p3title p3title p3title"
-        "ui001 ui002 ui003"
-        "ui004 ui005 ui006"
-        ;
-    gap: 16px 16px;
+    gap: 16px;
+    padding-top: 50px;
 }
 #p3title {
     grid-area: p3title;
@@ -196,41 +191,51 @@ font-family: 'Rock Salt', cursive;
     font-family: 'Rock Salt', cursive;
     font-size: 30px;
 }
-#ui001 {
-    grid-area: ui001;
-    background-image: url(../images/UI001@1.png);
+#p3Row {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+
 }
-#ui002 {
-    grid-area: ui002;
-    background-image: url(../images/UI002@1.png);
+.p3imgContainer {
+    position: relative;
+    width: 50%;
+    height: 300px;
 }
-#ui003 {
-    grid-area: ui003;
-    background-image: url(../images/003.png);
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    box-shadow: 0 0 5px 2px #7e7e7e52;
 }
-#ui004 {
-    grid-area: ui004;
-    background-image: url(../images/ui004.png);
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    left: 10%;
+    bottom: 10%;
+} 
+.p3imgContainer:hover .image {
+    opacity: 0.3;
 }
-#ui005 {
-    grid-area: ui005;
-    background-image: url(../images/UI005.png);
+.p3imgContainer:hover .middle {
+    opacity: 1;
 }
-#ui006 {
-    grid-area: ui006;
-    background-image: url(../images/006ui.png);
-}
-.uiArea {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.text {
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
 }
 #p4 {
     background-image: url(../images/brushGreen.png);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 }
 #p4Grid {
     width: 1100px;
