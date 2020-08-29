@@ -107,77 +107,87 @@ a:link {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-#mobile {
-    display: none;
-}
 #p2Grid {
     display: grid;
     width: 1100px;
     height: 700px;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 60% 40%;
     grid-template-areas: 
-        "non non nontext"
+        "nonprof nonprof nonprof"
         "gov rec trav"
         ;
     gap: 20px 20px;
 }
-#non {
-    grid-area: non;
-    background-image: url(../images/caseStudy-nonprofit.png);
-    background-size: 70%;
-    
+#nonprof {
+    grid-area: nonprof;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "nonprofImage nonprofText"
+        ;
 }
-#nontext {
-    grid-area: nontext;
-    justify-self: start;
-    align-self: center;
+#nonprofImage {
+    grid-area: nonprofImage;
+}
+#nonprofImage img {
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #7e7e7e52;
+}
+#nonprofText {
+    grid-area: nonprofText;
+}
+#nonprofImage, #nonprofText {
+    place-self: center;
+}
+#nonprofMobile {
+display: none;
 }
 #gov {
-    grid-area: gov;
-    background-image: url(../images/caseStudy-gov@2x.png);
-    box-shadow: 0 0 5px 2px #7e7e7e52;
-    border-radius: 10px;
+grid-area: gov;
+background-image: url(../images/caseStudy-gov@2x.png);
 }
 #rec {
-    grid-area: rec;
-    background-image: url(../images/caseStudy-recycle.png);
-    box-shadow: 0 0 5px 2px #7e7e7e52;
-    border-radius: 10px;
+grid-area: rec;
+background-image: url(../images/caseStudy-recycle.png);
 }
 #trav {
-    grid-area: trav;
-    background-image: url(../images/caseStudy-travel@1.png);
-    box-shadow: 0 0 5px 2px #7e7e7e52;
-    border-radius: 10px;
+grid-area: trav;
+background-image: url(../images/caseStudy-travel@1.png);
+}
+#gov, #rec, #trav {
+box-shadow: 0 0 5px 2px #7e7e7e52;
+border-radius: 10px;
 }
 .CSArea {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    display: grid;
-    align-content: end;
+    position: relative;
 }
-.heading, .subhead {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    height: 25px;
-}
-.heading {
-    font-family: 'Rock Salt', cursive;
+.csOverlay {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffffd7;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  .CSArea:hover .csOverlay {
+    height: 30%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-.subhead {
-    font-weight: bold;
-}
-.headingmain {
-    font-size: 30px;
-    font-family: 'Rock Salt', cursive;
-}
-.subheadmain {
-    font-size: 20px;
-}
+  }
+  
+  .cstext {
+    font-size: 16px;
+    transform: translate(10%, -40%);
+  }
 #p3 {
     background-image: url(../images/brushyellow.png);
     margin-top: 100px;
@@ -843,17 +853,17 @@ footer img {
         left: 10%;
         bottom: 55%;
     } 
-    .p3imgContainer:hover .image,  .p3imgContainer:active .image{
+    .p3imgContainer:active .image{
         opacity: 0.3;
     }
-    .p3imgContainer:hover .middle, .p3imgContainer:active .middle {
+   .p3imgContainer:active .middle {
         opacity: 1;
     }
-    button:hover, button:active{
+    button:active{
         padding-right: 24px;
         padding-left:8px;
       }
-    button:hover:after, button:active:after {
+    button:active:after {
         opacity: 1;
         right: 10px;
       }
