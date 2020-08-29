@@ -140,9 +140,13 @@ a:link {
 }
 #nonprofImage, #nonprofText {
     place-self: center;
+    display: block;
 }
 #nonprofMobile {
-display: none;
+    display: none;
+    grid-area: nonprofMobile;
+    background-image: url(../images/caseStudy-nonprofit.png);
+    background-position: center;
 }
 #gov {
 grid-area: gov;
@@ -156,7 +160,7 @@ background-image: url(../images/caseStudy-recycle.png);
 grid-area: trav;
 background-image: url(../images/caseStudy-travel@1.png);
 }
-#gov, #rec, #trav {
+#gov, #rec, #trav, #nonprofMobile {
 box-shadow: 0 0 5px 2px #7e7e7e52;
 border-radius: 10px;
 }
@@ -434,6 +438,33 @@ footer img {
     width: 46px;
     margin-top: 20px;
 }
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100000;
+    background-color: white;
+    top: 0;
+    display: flex;
+    align-items: center;
+  }
+  .preloader img {
+    animation: spin 3s ease;
+    transition: all;
+    width: 150px;
+    margin: 0 auto;
+  }
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
 @media screen and (max-width: 991px) {
     /* start of large tablet styles */
     a:hover, a:active  {
@@ -514,19 +545,26 @@ footer img {
         background-position: top;
     }
     #p2Grid {
-        display: grid;
         width: 600px;
         height: 1200px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "nontext"
-            "non"
+            "nonprofMobile"
             "gov" 
             "rec" 
             "trav"
             ;
-        row-gap: 20px;
+        gap: 20px 20px;
+    }
+    #nonprofImage {
+        display: none;
+    }
+    #nonprofText {display: none;}
+    #nonprofMobile {display: none;}
+    #nonprofMobile {display: block;}
+    .CSArea:hover .csOverlay {
+        height: 30%;
     }
     #p3 {
         margin-top: 75px;
@@ -663,20 +701,26 @@ footer img {
         margin-top: 25px;
     }
     #p2Grid {
-        width: 360px;
+        width: 400px;
         height: 1200px;
         grid-template-columns: 1fr;
-        grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "nontext"
-            "non"
+            "nonprofMobile"
             "gov" 
             "rec" 
             "trav"
             ;
-        row-gap: 16px;
-        padding-left: 16px;
-        scroll-padding-right: 16px;
+        gap: 20px 20px;
+    }
+    #nonprofImage {
+        display: none;
+    }
+    #nonprofText {display: none;}
+    #nonprofMobile {display: none;}
+    #nonprofMobile {display: block;}
+    .CSArea:hover .csOverlay {
+        height: 30%;
     }
     #p3 {
         margin-top: 60px;
@@ -825,20 +869,20 @@ footer img {
         text-align: center;
     }
     #p2Grid {
-        width: 360px;
+        width: 350px;
         height: 1200px;
         grid-template-columns: 1fr;
-        grid-template-rows: .5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "nontext"
-            "non"
+            "nonprofMobile"
             "gov" 
             "rec" 
             "trav"
             ;
-        row-gap: 16px;
-        padding-left: 0;
-        scroll-padding-right: 16px;
+        gap: 20px 20px;
+    }
+    #nonprofImage {
+        display: none;
     }
     #p3Container{
         width: 370px;
