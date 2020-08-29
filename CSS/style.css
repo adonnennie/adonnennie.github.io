@@ -38,10 +38,10 @@ a:link {
         "homeLink CSLink UILink aboutLink processLink funLink"
         ;
     z-index: 10;
+    text-align: center;
 }
 #homeLink {
     grid-area: homeLink; 
-    padding-bottom: 20px;
 }
 #CSLink {
     grid-area: CSLink;
@@ -59,7 +59,6 @@ a:link {
     grid-area: funLink;
 }
 .linkArea img {
-    object-fit: cover;
     width: 90%;
 }
 .p1 {
@@ -127,6 +126,7 @@ a:link {
     grid-area: non;
     background-image: url(../images/caseStudy-nonprofit.png);
     background-size: 70%;
+    
 }
 #nontext {
     grid-area: nontext;
@@ -137,16 +137,19 @@ a:link {
     grid-area: gov;
     background-image: url(../images/caseStudy-gov@2x.png);
     box-shadow: 0 0 5px 2px #7e7e7e52;
+    border-radius: 10px;
 }
 #rec {
     grid-area: rec;
     background-image: url(../images/caseStudy-recycle.png);
     box-shadow: 0 0 5px 2px #7e7e7e52;
+    border-radius: 10px;
 }
 #trav {
     grid-area: trav;
     background-image: url(../images/caseStudy-travel@1.png);
     box-shadow: 0 0 5px 2px #7e7e7e52;
+    border-radius: 10px;
 }
 .CSArea {
     background-repeat: no-repeat;
@@ -161,7 +164,9 @@ a:link {
     height: 25px;
 }
 .heading {
-font-family: 'Rock Salt', cursive;
+    font-family: 'Rock Salt', cursive;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .subhead {
     font-weight: bold;
@@ -210,6 +215,7 @@ font-family: 'Rock Salt', cursive;
     height: 300px;
     margin: 10px;
     box-shadow: 0 0 5px 2px #7e7e7e52;
+    border-radius: 10px;
 }
 .middle {
     transition: .5s ease;
@@ -319,7 +325,7 @@ button {
     grid-template-rows: 1fr 3fr 1fr 1fr;
     grid-template-areas: 
         "p5t p5t" 
-        "p5img1 p5img2" 
+        "p5img1 p5img1" 
         "p5text1 p5text2"
         "p5text3 p5text3"
         ;
@@ -331,14 +337,14 @@ button {
 }
 #p5img1 {
     grid-area: p5img1;
-    background-image: url(../images/UX\ part\ 1.svg);
-    background-position: right;
+    background-image: url(../images/myProcess_full.png);
+    background-position: center;
 }
 #p5img2 {
     grid-area: p5img2;
     background-image: url(../images/UX\ part\ 2.svg);
     background-position: left;
-    
+    display: none;
 }
 #p5text1 {
     grid-area: p5text1;
@@ -399,13 +405,14 @@ button {
     object-fit: cover;
     width: 200px;
     height: 200px;
+    border-radius: 10px;
 }
 footer {
     background-image: url(../images/splatter.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    height: 200px;
+    height: 250px;
     display: block;
     justify-content: center;
     text-align: center;
@@ -417,28 +424,70 @@ footer img {
     width: 46px;
     margin-top: 20px;
 }
-@media only screen and (max-width: 730px) {
+@media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+    a:hover, a:active  {
+        text-decoration: underline;
+    }
+    #p1Grid {
+        width: 975px;
+        height: 500px;
+    }
+    #p2 {
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+    #p3 {
+        margin-top: 75px;
+        text-align: center;
+    }
+    #p3Container{
+        width: 980px;
+        height: 500px;
+    }
+    .p3imgContainer:hover .image,  .p3imgContainer:active .image{
+        opacity: 0.3;
+    }
+    .p3imgContainer:hover .middle, .p3imgContainer:active .middle {
+        opacity: 1;
+    }
+    button:hover, button:active{
+        padding-right: 24px;
+        padding-left:8px;
+      }
+    button:hover:after, button:active:after {
+        opacity: 1;
+        right: 10px;
+      }
+    #p5 {
+        background-position: top;
+    }
+    #p5Grid {
+        width: 980px;
+        height: 700px;
+    }
+    #p6 {
+        background-position: top;
+    }
+    #p6t {
+        margin-top: 25px;
+    }
+    #p6Grid {
+        height: 1320px;
+    }
+    footer {
+        height: 270px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    /* start of medium tablet styles */
     #navGrid {
-        display: grid;
-        position: fixed;
-        z-index: 10;
         bottom: 10px;
-        width: 600px;
-        height: 80px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 100px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 100px;
-        grid-template-areas: 
-            "homeLink CSLink UILink aboutLink processLink funLink"
-            ;      
-            align-items: center;
+        width: 700px;
+        height: 90px;
     }
     .linkArea img {
-        width: 70%; 
-        object-fit: contain;
-        margin-left: 25px;
-        margin-bottom: 10px;
+        width: 80%; 
     }
     #p1Grid {
         display: grid;
@@ -452,14 +501,11 @@ footer img {
             ;
     }
     #p2 {
-        background-image: url(../images/brushred.png);
         background-position: top;
-        margin-top: 25px;
-        margin-bottom: 50px;
     }
     #p2Grid {
         display: grid;
-        width: 555px;
+        width: 600px;
         height: 1200px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
@@ -473,33 +519,31 @@ footer img {
         row-gap: 20px;
     }
     #p3 {
-        background-image: url(../images/brushyellow.png);
+        margin-top: 75px;
         background-position: top;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
+        text-align: center;
     }
-    #p3Grid {
-        display: grid;
-        width: 555px;
-        height: 700px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 2fr 2fr 2fr;
-        grid-template-areas: 
-            "p3title p3title"
-            "ui001 ui002" 
-            "ui003 ui004" 
-            "ui005 ui006"
-            ;
-        gap: 16px 16px;
+    #p3Container{
+        width: 760px;
+        height: 400px;
+        margin-top: 25px;
     }
+    .p3imgContainer:hover .image,  .p3imgContainer:active .image{
+        opacity: 0.3;
+    }
+    .p3imgContainer:hover .middle, .p3imgContainer:active .middle {
+        opacity: 1;
+    }
+    button:hover, button:active{
+        padding-right: 24px;
+        padding-left:8px;
+      }
+    button:hover:after, button:active:after {
+        opacity: 1;
+        right: 10px;
+      }
     #p4 {
-        background-image: url(../images/brushGreen.png);
         background-position: top;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-top: 50px;
     }
     #p4Grid {
@@ -515,31 +559,13 @@ footer img {
             ;
     }
     #p4text {
-        grid-area: p4text;
-        display: grid;
-        font-family: 'Oswald', sans-serif;
-        grid-template-columns: 1fr;
-        grid-template-rows: 90% 10%;
-        grid-template-areas: 
-            "p4t"
-            "p4t2"
-            ;
         padding-right: 20px;
     }
-    button {
-        border-radius: 10px;
-        background-color: #37aa59;
-        border: none;
-        color: #fff;
-        text-align: center;
-        font-size: 16px;
-        padding: 16px;
-        width: 150px;
-        box-shadow: 0 5px 10px -8px rgba(0, 0, 0,.7);
-        z-index: 0;
-      }
+    #p4t2 {
+        justify-self: center;
+        align-self: end;
+    }
     #p5 {
-        background-image: url(../images/brushBlue.png);
         background-position: top;
         margin-top: 50px;
     }
@@ -559,30 +585,26 @@ footer img {
             ;
     }
     #p5img1 {
-        grid-area: p5img1;
         background-image: url(../images/UX\ part\ 1.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
     }
     #p5img2 {
-        grid-area: p5img2;
-        background-image: url(../images/UX\ part\ 2.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        display: block;
     }
     #p6 {
-        background-image: url(../images/brushPurple.png);
         background-position: top;
         margin-top: 50px;
     }
     #p6Grid {
-        display: grid;
-        width: 600px;
-        height: 2500px;
+        width: 750px;
+        height: 2100px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: .5fr 2fr 2fr 2fr 2fr;
         grid-template-areas: 
             "p6t"
             "photo" 
@@ -592,28 +614,14 @@ footer img {
             ;
     }
     footer {
-        background-image: url(../images/splatter.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        height: 200px;
-        display: block;
-        justify-content: center;
-        text-align: center;
-        -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0..25);
-        -moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
-        box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+        height: 275px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 479px) {
+    /* start of phone styles */
     #navGrid {
-        display: grid;
-        position: fixed;
-        bottom: 10px;
-        width: 360px;
+        width: 460px;
         height: 150px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 100px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 75px 75px;
         grid-template-areas: 
@@ -625,10 +633,8 @@ footer img {
     .linkArea img {
         width: 65%; 
         object-fit: contain;
-        margin-left: 35px;
     }
     #p1Grid {
-        display: grid;
         width: 360px;
         height: 600px;
         grid-template-columns: 1fr;
@@ -639,17 +645,14 @@ footer img {
             ;
     }
     #p1right {
-        grid-area: p1right; 
-        font-size: 22px;
+        font-size: 24px;
         text-align: center;
     }
     #p2 {
-        background-image: url(../images/brushred.png);
         background-position: top;
         margin-top: 25px;
     }
     #p2Grid {
-        display: grid;
         width: 360px;
         height: 1200px;
         grid-template-columns: 1fr;
@@ -666,59 +669,57 @@ footer img {
         scroll-padding-right: 16px;
     }
     #p3 {
-        background-image: url(../images/brushyellow.png);
+        margin-top: 60px;
         background-position: top;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        padding-left: 16px;
-        padding-right: 16px;
+        text-align: center;
     }
-    #p3Grid {
-        display: grid;
-        width: 360px;
-        height: 1000px;
-        grid-template-columns: 1fr;
-        grid-template-rows: .25fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-            "p3title"
-            "ui001" 
-            "ui002" 
-            "ui003" 
-            "ui004" 
-            "ui005" 
-            "ui006"
-            ;
-        row-gap: 16px;
+    #p3Container{
+        width: 470px;
+        height: 275px;
+        margin-top: 25px;
     }
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+    .middle {
+        left: 15%;
+        bottom: 40%;
+    } 
+    .p3imgContainer:hover .image,  .p3imgContainer:active .image{
+        opacity: 0.3;
+    }
+    .p3imgContainer:hover .middle, .p3imgContainer:active .middle {
+        opacity: 1;
+    }
+    button:hover, button:active{
+        padding-right: 24px;
+        padding-left:8px;
+      }
+    button:hover:after, button:active:after {
+        opacity: 1;
+        right: 10px;
+      }
     #p4 {
-        background-image: url(../images/brushGreen.png);
         background-position: top;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-top: 50px;
     }
     #p4Grid {
-        width: 360px;
-        height: 1000px;
+        width: 460px;
+        height: 900px;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 10% 20% 70%;
+        grid-template-rows: 10% 30% 60%;
         grid-template-areas: 
             "p4title"
             "p4img" 
             "p4text"
             ;
-        padding-left: 16px;
-        padding-right: 16px;
+    }
+    #p4title {
+        margin-top: 20px;
     }
     #p4text {
-        grid-area: p4text;
-        display: grid;
-        width: 300px;
-        padding-left: 10px;
         font-family: 'Oswald', sans-serif;
         grid-template-columns: 1fr;
         grid-template-rows: 90% 10%;
@@ -727,21 +728,25 @@ footer img {
             "p4t2"
             ;
     }
+    #p4t {
+        padding-left: 50px;
+        padding-right: 20px;
+    }
     iframe {
-        width: 110%;
-        height: auto;
-        padding-top: 25px;
+        height: 275px;
+        margin: 0 auto;
+    }
+    #p4img {
+        padding-right: 0;
     }
     #p5 {
-        background-image: url(../images/brushBlue.png);
         background-position: top;
     }
     #p5Grid {
-        display: grid;
         width: 360px;
-        height: 1200px;
+        height: 1100px;
         grid-template-columns: 1fr;
-        grid-template-rows: 5% 18% 18% 18% 18% 23%;
+        grid-template-rows: 8% 19% 18% 19% 18% 18%;
         grid-template-areas: 
             "p5t" 
             "p5img1" 
@@ -750,9 +755,7 @@ footer img {
             "p5text2"
             "p5text3"
             ;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 50px;
+            padding-top:25px;
     }
     #p5img1 {
         grid-area: p5img1;
@@ -772,15 +775,13 @@ footer img {
         margin-top: 50px;
     }
     #p6 {
-        background-image: url(../images/brushPurple.png);
         background-position: top;
     }
     #p6Grid {
-        display: grid;
-        width: 600px;
-        height: 4500px;
+        width: 479px;
+        height: 2650px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: .25fr 1.5fr 1.5fr 1fr 1fr;
         grid-template-areas: 
             "p6t"
             "photo" 
@@ -790,16 +791,6 @@ footer img {
             ;
     }
     footer {
-        background-image: url(../images/splatter.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        height: 300px;
-        display: block;
-        justify-content: center;
-        text-align: center;
-        -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0..25);
-        -moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
-        box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.25);
+        height: 350px;
     }
 }
