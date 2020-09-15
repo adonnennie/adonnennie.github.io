@@ -88,6 +88,7 @@ a:link {
     grid-area: p1right; 
     place-self: center;
     font-size: 26px;
+    padding-left: 20px;
 }
 .p1Area {
     background-size: contain;
